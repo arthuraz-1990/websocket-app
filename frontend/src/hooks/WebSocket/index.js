@@ -10,7 +10,6 @@ const useWebSocket = () => {
         const client = new Client({
             brokerURL: "ws://localhost:8080/websockets",
             onConnect: (frame) => {
-                console.log('Conectou!!');
                 setIsReady(true);
             },
             onStompError: (error) => {
@@ -18,6 +17,9 @@ const useWebSocket = () => {
             },
             onWebSocketError: (error) => {
                 console.log(error)
+            },
+            debug: (str) => {
+                console.log(new Date(), str);
             }
         });
 

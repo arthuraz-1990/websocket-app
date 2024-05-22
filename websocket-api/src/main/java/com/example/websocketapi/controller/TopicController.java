@@ -9,7 +9,7 @@ import org.springframework.stereotype.Controller;
 public class TopicController {
 
     @MessageMapping("/message")
-    @SendTo("/topic/messsages")
+    @SendTo("/topic/messages")
     public MessageDTO sendMessage(String message) throws Exception {
         MessageDTO messageDTO = new MessageDTO(message);
         Thread.sleep(1000);
